@@ -1399,6 +1399,19 @@ function! vimwiki#html#Wiki2HTML(path, wikifile) "{{{
   return path.htmlfile
 endfunction "}}}
 
+function! vimwiki#html#WikiGetHTMLLink(path, wikifile) "{{{
+
+  echo 'Launching HTML ... '
+
+  let wikifile = fnamemodify(a:wikifile, ":p")
+  let subdir = vimwiki#base#subdir(VimwikiGet('path'), wikifile)
+
+  let path = expand(a:path).subdir
+  let htmlfile = fnamemodify(wikifile, ":t:r").'.html'
+
+  return path.htmlfile
+endfunction "}}}
+
 
 function! vimwiki#html#WikiAll2HTML(path) "{{{
   if !s:syntax_supported()

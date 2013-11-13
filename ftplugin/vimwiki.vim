@@ -206,6 +206,10 @@ command! -buffer Vimwiki2HTMLBrowse
       \ w <bar> call VimwikiWeblinkHandler(
       \   vimwiki#html#Wiki2HTML(expand(VimwikiGet('path_html')),
       \                          expand('%')))
+command! -buffer VimwikiCallHTMLBrowse
+      \ w <bar> call VimwikiWeblinkHandler(
+      \   vimwiki#html#WikiGetHTMLLink(expand(VimwikiGet('path_html')),
+      \                          expand('%')))
 command! -buffer VimwikiAll2HTML
       \ call vimwiki#html#WikiAll2HTML(expand(VimwikiGet('path_html')))
 
@@ -257,16 +261,22 @@ endif
 
 
 if !hasmapto('<Plug>Vimwiki2HTML')
-  nmap <buffer> <Leader>wh <Plug>Vimwiki2HTML
+  nmap <buffer> <Leader>wl <Plug>Vimwiki2HTML
 endif
 nnoremap <script><buffer>
-      \ <Plug>Vimwiki2HTML :Vimwiki2HTML<CR>
+      \ <Plug>Vimwiki2HTML :Vimwiki2HTML<CR><CR>
 
 if !hasmapto('<Plug>Vimwiki2HTMLBrowse')
-  nmap <buffer> <Leader>whh <Plug>Vimwiki2HTMLBrowse
+  nmap <buffer> <Leader>wll <Plug>Vimwiki2HTMLBrowse
 endif
 nnoremap <script><buffer>
-      \ <Plug>Vimwiki2HTMLBrowse :Vimwiki2HTMLBrowse<CR>
+      \ <Plug>Vimwiki2HTMLBrowse :Vimwiki2HTMLBrowse<CR><CR>
+
+if !hasmapto('<Plug>VimwikiCallHTMLBrowse')
+  nmap <buffer> <Leader>wh <Plug>VimwikiCallHTMLBrowse
+endif
+nnoremap <script><buffer>
+      \ <Plug>VimwikiCallHTMLBrowse :VimwikiCallHTMLBrowse<CR><CR>
 
 if !hasmapto('<Plug>VimwikiFollowLink')
   nmap <silent><buffer> <CR> <Plug>VimwikiFollowLink
