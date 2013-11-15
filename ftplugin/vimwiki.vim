@@ -423,6 +423,7 @@ nnoremap <silent><buffer> - :call vimwiki#base#RemoveHeaderLevel()<CR>
 " Insert emphasis DIV
 call IMAP ('DIV', '<div class="emphasis"><++></div><++>', '')
 call IMAP ('HIG', '<div class="highlight"><++></div><++>', '')
+call IMAP ('HIB', "<div class=\"highlight-block\">\<cr><++>\<cr></div><++>", '') 
 call IMAP ('=>', '$\Rightarrow$', '')
 call IMAP ('-->', '$\rightarrow$', '')
 " Align environment
@@ -450,7 +451,7 @@ call IMAP (g:mapleader.',|', '\left\| <++> \right\|<++>', '')
 call IMAP ('{{{{', "{{{class=\"brush: <++>\"\<cr><++>\<cr>}}}<++>", '')
 
 " Math map
-call IMAP (g:mapleader.'$$', "$$\<cr><++>\<cr>$$\<cr><++>", '')
+call IMAP (g:mapleader.'$$', "$$\<cr><++>\<cr>$$<++>", '')
 call IMAP (g:mapleader.', ', '\qquad ', '')
 call IMAP (g:mapleader.',/', '\over ', '')
 call IMAP (g:mapleader.'o', '\cdot', '')
