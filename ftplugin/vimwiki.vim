@@ -499,6 +499,8 @@ call IMAP (g:mapleader.'TE', "\\text{<++>}<++>", '')
 call IMAP (g:mapleader.'TB', "\\textbf{<++>}<++>", '')
 " \textit
 call IMAP (g:mapleader.'TI', "\\textit{<++>}<++>", '')
+" \boldsymbol
+call IMAP (g:mapleader.'BS', "\\boldsymbol{<++>}<++>", '')
 " }}}
 " Greek Letters {{{
 call IMAP(g:mapleader.'a', '\alpha', '')
