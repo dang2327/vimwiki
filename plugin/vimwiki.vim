@@ -71,6 +71,10 @@ function! s:setup_filetype() "{{{
       return
     endif
 
+  " Some latex config
+  let g:Tex_SmartKeyQuote = 0
+  let g:Tex_SmartKeyDot = 0
+
   set filetype=tex
   set filetype=vimwiki
 endfunction "}}}
@@ -444,5 +448,3 @@ endif
 "}}}
 
 let &cpo = s:old_cpo
-let g:Tex_SmartKeyQuote = 0
-let g:Tex_SmartKeyDot = 0
