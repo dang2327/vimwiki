@@ -192,11 +192,13 @@ if !exists("*VimwikiWeblinkHandler") "{{{
     for browser in g:vimwiki_browsers
       if executable(browser)
         if has("win32")
-          execute '!start "'.browser.'" "' . a:weblink . '"'
+          execute '!start "'.fnameescape(browser).'" "' . a:weblink . '"'
         else
-          execute '!'.browser.' "' . a:weblink . '"'
+          execute '!'.fnameescape(browser).' "' . a:weblink . '"'
         endif
         return
+      else
+        echom "Bad executable!"
       endif
     endfor
   endfunction
